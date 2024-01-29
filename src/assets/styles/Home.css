@@ -1,0 +1,32 @@
+.produit {
+    height: 470px;
+    border: 2px solid black;
+    margin-top: 5%;
+    background-color: rgba(var(--bs-tertiary-bg-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.menu {
+    height: 470px;
+    border: 2px solid black;
+    margin-top: 5%;
+    background-color: rgba(var(--bs-tertiary-bg-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.imageagrandie {
+    width: 237px;
+    height: 202px;
+
+}
+
+.imageagrandie img {
+    margin-top: 5%;
+    margin-left: 0%;
+}
+
+.sousimg {
+    height: 38px;
+}
+
+.detail {
+    text-align: center;
+}

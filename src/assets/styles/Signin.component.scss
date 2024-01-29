@@ -1,0 +1,23 @@
+.login {
+  &_main-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    padding-top: 5%;
+  }
+
+  &_left-container {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 50%;
+    }
+    padding-top: 100px;
+  }
+
+  &_right-container {
+    display: flex;
+    justify-content: center;
+    padding-right: 10%;
+  }
+}
