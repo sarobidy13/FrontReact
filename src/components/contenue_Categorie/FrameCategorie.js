@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Tools from '../Tools';
 import ListCategorie from '../contenue_Categorie/ListCategorie';
 import Field from '../Field';
@@ -15,7 +15,7 @@ const FrameCategorie = () => {
         }
         
         try {
-            const response = await fetch('https://e-vehicule-production-c2e4.up.railway.app/categories/', {
+                await fetch('https://e-vehicule-production-c2e4.up.railway.app/categories/', {
                 headers: {
                     'Authorization':`Bearer ${token}`,
                     'Content-Type':'application/json',

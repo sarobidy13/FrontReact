@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import Tools from '../Tools';
 import ListMarque from './ListMarque';
 import Field from '../Field';
@@ -14,7 +14,7 @@ const FrameMarque = () => {
         }
         
         try {
-            const response = await fetch('https://e-vehicule-production-c2e4.up.railway.app/marques/', {
+                await fetch('https://e-vehicule-production-c2e4.up.railway.app/marques/', {
                 headers: {
                     'Authorization':`Bearer ${token}`,
                     'Content-Type':'application/json',

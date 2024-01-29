@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import "../../assets/styles/stat.css";
 
 const FrameStatistique = () => {
-    const token = sessionStorage.getItem("token");
+    //const token = sessionStorage.getItem("token");
 
     return (
         <div class="simple-bar-chart">
