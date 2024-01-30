@@ -27,7 +27,7 @@ const FrameStatistique = () => {
         };
 
         fetchData();
-    }, []);
+    }, [token]);
 
     return (
         <div className="simple-bar-chart">
