@@ -1,6 +1,4 @@
 
-import React, { useEffect } from 'react';
-
 const Logout = () => {
     const handleLogout = async () => {
         const token = sessionStorage.getItem("token");
