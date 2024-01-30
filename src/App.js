@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboard";
 import Statistiques from "./pages/Statistiques";
 import Marque from "./pages/Marque";
 import Categorie from "./pages/Categorie";
+import Annonce from "./pages/Annonce";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/marque" element={<Marque />} />
         <Route path="/categorie" element={<Categorie />} />
         <Route path="/stat" element={<Statistiques />} />
+        <Route path="/annonce" element={<Annonce />} />
       </Routes>
     </BrowserRouter>
 

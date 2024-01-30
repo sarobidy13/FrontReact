@@ -20,7 +20,8 @@ const Sidebar = () => {
                     <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <ToggeMenu menuTitle="Insertion" menuIcon="fas fa-table" subItems={dataTable} />
                         <Menu menuTitle={"Statistiques"} menuIcon={"fas fa-table"} to={"/stat"} />
-                        <Menu menuTitle={"Validation annonce"} menuIcon={"fas fa-table"} to={"/marque"} />
+                        <Menu menuTitle={"Validation annonce"} menuIcon={"fas fa-table"} to={"/annonce"} />
+                        <Menu menuTitle={"Se deconnecter"} menuIcon={"fas fa-power-off"} to={"/logout"} />
                     </ul>
                 </div>
                 {/* /.sidebar-menu */}

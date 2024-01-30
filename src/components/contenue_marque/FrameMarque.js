@@ -5,7 +5,7 @@ import Field from '../Field';
 
 const FrameMarque = () => {
     const token = sessionStorage.getItem("token");
-    const [marque, setMarque] = useState(null);
+    const [marque, setMarque] = useState('');
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -23,6 +23,7 @@ const FrameMarque = () => {
                 body: JSON.stringify(marques)
             }
             );
+            window.location.reload();
             
         } catch (error) {
             console.error('Erreur pendant la requête:', error);

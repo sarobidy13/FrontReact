@@ -23,6 +23,8 @@ const FrameCategorie = () => {
                 method: 'POST',
                 body: JSON.stringify(categories)
             });
+            
+            window.location.reload();
         } catch (error) {
             console.error('Erreur pendant la requête:', error);
             alert('Une erreur s\'est produite.');

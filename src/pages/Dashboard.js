@@ -18,7 +18,7 @@ const Dashboard = () => {
                 <Header />
                 <Sidebar />
                 <div className="content-wrapper" >
-                    <ContentHeader text="Dashoard" />
+                    <ContentHeader text="Liste des marques existantes" />
                     <Home/>
                 </div>
                 

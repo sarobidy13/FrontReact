@@ -55,10 +55,6 @@ const Home = () => {
             ) : (
                 <p>Chargement...</p>
             )}
-
-            <Link to="/logout" >
-                Déconnexion
-            </Link>
         </div>
     );
 };
