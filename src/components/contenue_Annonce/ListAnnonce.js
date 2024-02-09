@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 const ListAnnonce = () => {
     const [annonceData, setAnnonceData] = useState([]);
-    const [setAnnoncevalideData] = useState(undefined);
     const token = sessionStorage.getItem('token');
 
     useEffect(() => {
@@ -36,8 +35,12 @@ const ListAnnonce = () => {
         fetchData();
     }, [token]);
 
-    const handleValidation = async (annonceId) => {
+    const fecthId = async (annonceId) => {
         try {
+            if (!token) {
+                window.location.href = '/login';
+            }
+    
             const response = await fetch(`https://webservice-production-4a2c.up.railway.app/annonces/${annonceId}`, {
                 method: 'GET',
                 headers: {
@@ -47,37 +50,48 @@ const ListAnnonce = () => {
             });
     
             const data = await response.json();
-    
-            if (response.ok) {
-                // Utilisez l'état existant pour stocker les données de l'annonce valide
-                setAnnoncevalideData(data.data);
-    
-                const updatedData = { ...data.data, estValide: 1 };
-    
-                const putResponse = await fetch(`https://webservice-production-4a2c.up.railway.app/annonces/${annonceId}`, {
-                    method: 'PUT',
-                    headers: {
-                        'Authorization': `Bearer ${token}`,
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(updatedData),
-                });
-    
-                if (putResponse.ok) {
-                    console.log('Statut de l\'annonce mis à jour avec succès.');
-                    window.location.reload();
-                } else {
-                    const putData = await putResponse.json();
-                    alert("Erreur lors de la mise à jour de l'annonce : " + JSON.stringify(putData));
-                }
-            } else {
-                alert("Erreur lors de la récupération des données spécifiques de l'annonce : " + JSON.stringify(data));
-            }
+            return data.data;
         } catch (error) {
-            console.error('Erreur lors de la mise à jour de l\'annonce:', error);
+            console.error('Erreur lors de la récupération des données:', error);
         }
     };
     
+    const update = async (annonceId) => {
+        try {
+            if (!token) {
+                window.location.href = '/login';
+            }
+    
+            const getById = await fecthId(annonceId);
+            const updatedData = { ...getById, estValide: 1 };
+    
+            const response = await fetch(`https://webservice-production-4a2c.up.railway.app/annonces/${annonceId}`, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(updatedData),
+            });
+    
+            if (response.ok) {
+                console.log("Mise à jour réussie !");
+                window.location.reload();
+            } else {
+                alert("Erreur lors de la mise à jour : " + JSON.stringify(response));
+            }
+        } catch (error) {
+            console.error('Erreur lors de la mise à jour des données:', error);
+        }
+    };
+    
+    const handleValidation = async (annonceId) => {
+        update(annonceId);
+    };
+    
+    
+    
+
     return (
       
         <div className="container mt-4">
@@ -114,7 +128,7 @@ const ListAnnonce = () => {
                     ))}
                 </div>
             ) : (
-                <p>Aucune annonce</p>
+                <p>Aucune</p>
             )}
         </div>
     );
