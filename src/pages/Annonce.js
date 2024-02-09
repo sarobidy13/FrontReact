@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 import ContentHeader from '../components/ContentHeader';
 import Footer from '../components/Footer';
+import ListAnnonce from '../components/contenue_Annonce/ListAnnonce';
 
 const Annonce = () => {
     const token = sessionStorage.getItem('token');
@@ -17,8 +18,8 @@ const Annonce = () => {
                 <Header />
                 <Sidebar />
                 <div className="content-wrapper" >
-                    <ContentHeader text="ANNONCE"/>
-                    
+                    <ContentHeader text="Liste des annonces"/>
+                    <ListAnnonce />
                 </div>
                 <Footer />
             </div>

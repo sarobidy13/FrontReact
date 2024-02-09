@@ -8,7 +8,7 @@ const FrameStatistique = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://e-vehicule-production-c2e4.up.railway.app/annonces/statistique', {
+                const response = await fetch('https://webservice-production-4a2c.up.railway.app/annonces/statistique', {
                     method: 'GET',
                     headers: {
                         'Authorization':`Bearer ${token}`,
