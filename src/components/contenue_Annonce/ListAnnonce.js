@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const ListAnnonce = () => {
     const [annonceData, setAnnonceData] = useState([]);
-    const [annoncevalide,setAnnoncevalideData] = useState(undefined);
+    const [setAnnoncevalideData] = useState(undefined);
     const token = sessionStorage.getItem('token');
 
     useEffect(() => {
